@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme="https://volantis.js.org/#2.6.5">
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>元素定位 - Frieza</title>
+  
+    <meta name="keywords" content="appium">
+  
+  
+    <meta name="description" content="appium元素定位">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+    
+      <meta name="theme-color" content="#FFFFFF">
+    
+      <meta name="msapplication-TileColor" content="#1BC3FB">
+    
+      <meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/browserconfig.xml">
+    
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicon.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/favicon-32x32.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/apple-touch-icon.png">
+  <link rel="mask-icon" color="#1BC3FB" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/safari-pinned-tab.svg">
+  <link rel="manifest" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/site.webmanifest">
+  
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class="container">
+  <div class="wrapper">
+    <div class="nav-sub">
+      <p class="title"></p>
+      <ul class="switcher nav-list-h">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href="javascript:void(0)"></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href="javascript:void(0)"></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href="/">
+          
+          
+            <i class="https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/myhead.png"></i>
+          
+          
+            Frieza
+          
+          
+        </a>
+      
+
+			<div class="menu navigation">
+				<ul class="nav-list-h">
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/" id="home">
+                  <i class="fas fa-home fa-fw fa-fw"></i>主页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-book fa-fw fa-fw"></i>系列文章
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/snippet/" id="wqbsnippet">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Python
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li class="header">
+                <i class="fas fa-file-alt fa-fw fa-fw"></i>Java
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/docker/" id="wqbdocker">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Docker
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/sql/" id="wqbsql">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>SQL
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/linux/" id="wqblinux">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Linux
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/appium/" id="wqbappium">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Appium
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/vue/" id="wqbvue">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Vue
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/adb/" id="adb">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Android SDK
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/categories/" id="categories">
+                  <i class="fas fa-folder-open fa-fw"></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/tags/" id="tags">
+                  <i class="fas fa-tags fa-fw"></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/archives/" id="archives">
+                  <i class="fas fa-archive fa-fw"></i>时间轴
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-ellipsis-v fa-fw"></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/about/" id="about">
+                  <i class="fas fa-info-circle fa-fw"></i>关于小站
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/wongqingbin/PicGo" target="_blank" id="https:githubcomwongqingbinPicGo" rel="external nofollow noopener noreferrer">
+                  <i class="fab fa-github fa-fw"></i>GitHub图床
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/wongqingbin/blog" target="_blank" id="https:githubcomwongqingbinblog" rel="external nofollow noopener noreferrer">
+                  <i class="fab fa-github fa-fw"></i>博客源码
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/msgboard/" id="msgboard">
+                  <i class="fas fa-question-circle fa-fw fa-fw"></i>留言板
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li class="header">
+                <i class="fas fa-link fa-fw"></i>友情链接
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search...">
+        </form>
+      </div>
+
+			<ul class="switcher nav-list-h">
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href="javascript:void(0)"></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href="javascript:void(0)"></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/" id="home">
+                  <i class="fas fa-home fa-fw fa-fw"></i>主页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-book fa-fw fa-fw"></i>系列文章
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/snippet/" id="wqbsnippet">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Python
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li class="header">
+                <i class="fas fa-file-alt fa-fw fa-fw"></i>Java
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/docker/" id="wqbdocker">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Docker
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/sql/" id="wqbsql">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>SQL
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/linux/" id="wqblinux">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Linux
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/appium/" id="wqbappium">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Appium
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/vue/" id="wqbvue">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Vue
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/adb/" id="adb">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Android SDK
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/categories/" id="categories">
+                  <i class="fas fa-folder-open fa-fw"></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/tags/" id="tags">
+                  <i class="fas fa-tags fa-fw"></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/archives/" id="archives">
+                  <i class="fas fa-archive fa-fw"></i>时间轴
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-ellipsis-v fa-fw"></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/about/" id="about">
+                  <i class="fas fa-info-circle fa-fw"></i>关于小站
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/wongqingbin/PicGo" target="_blank" id="https:githubcomwongqingbinPicGo" rel="external nofollow noopener noreferrer">
+                  <i class="fab fa-github fa-fw"></i>GitHub图床
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/wongqingbin/blog" target="_blank" id="https:githubcomwongqingbinblog" rel="external nofollow noopener noreferrer">
+                  <i class="fab fa-github fa-fw"></i>博客源码
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/msgboard/" id="msgboard">
+                  <i class="fas fa-question-circle fa-fw fa-fw"></i>留言板
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li class="header">
+                <i class="fas fa-link fa-fw"></i>友情链接
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class="body-wrapper">
+      
+
+<div class="l_main">
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class="meta">
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/ckpo6h1vl0022fmni48fu3zkz/">
+      元素定位
+    </a>
+  </h1>
+
+
+        
+        <div class="new-meta-box">
+          
+            
+          
+            
+              
+<div class="new-meta-item author">
+  <a href="https://github.com/wongqingbin" target="_blank" rel="external nofollow noopener noreferrer">
+    <img src="https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/myhead.png">
+    <p>Wang QingBin</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class="new-meta-item category">
+    <a href="/categories/appium/" rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>appium</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class="notlink">
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年8月8日</p>
+  </a>
+</div>
+
+            
+          
+            
+              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-08T15:07:54+00:00">
+  <a class="notlink">
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年6月8日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class="notlink">
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1.5k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class="notlink">
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：6分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>appium元素定位</p>
+<a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br></pre></td><td class="code"><pre><span class="line"># Selenium元素定位</span><br><span class="line">find_element_by_id</span><br><span class="line">find_element_by_name</span><br><span class="line">find_element_by_xpath</span><br><span class="line">find_element_by_link_text</span><br><span class="line">find_element_by_partial_link_text</span><br><span class="line">find_element_by_tag_name</span><br><span class="line">find_element_by_class_name</span><br><span class="line">find_element_by_css_selector</span><br><span class="line"></span><br><span class="line"># appium元素定位</span><br><span class="line"># find_element_by_ios_uiautomation()</span><br><span class="line"># find_element_by_android_uiautomator(&quot;xx&quot;)</span><br><span class="line"></span><br><span class="line">driver.find_element_by_id(&quot;id&quot;)   # id定位</span><br><span class="line">driver.find_element_by_name(&quot;name&quot;)  # name定位</span><br><span class="line">driver.find_element_by_link_text(&quot;text&quot;)  # 链接名定位</span><br><span class="line">driver.find_element_by_partial_link_text(&quot;text&quot;)  # 通过元素部分可见链接文本定位</span><br><span class="line">driver.find_element_by_tag_name(&quot;name&quot;)  # 通过查找html的标签名称定位元素</span><br><span class="line">driver.find_element_by_xpath(&quot;xpath&quot;)  # 路径定位</span><br><span class="line">driver.find_element_by_class_name(&quot;android.widget.LinearLayout&quot;)  # 类名定位</span><br><span class="line">driver.find_element_by_css_selector(&quot;css&quot;) # css选择器定位</span><br><span class="line"></span><br><span class="line"># 1.appium获取content-desc文本值用element.get_attribute(&#39;name&#39;);</span><br><span class="line"># 2.appium获取text属性的文本值用element.text或者element.get_attribute(&#39;text&#39;);</span><br><span class="line"># 3.appium中属性值对应的定位方式：</span><br><span class="line"># text-&gt;find_element_by_name</span><br><span class="line"># resource_id-&gt;find_element_by_id</span><br><span class="line"># class-&gt;find_element_by_class_name</span><br><span class="line"># content-desc-&gt;find_element_by_accessibility_id</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">global driver</span><br><span class="line"># 元素定位</span><br><span class="line">driver.find_element_by_id(&quot;id&quot;)   # id定位</span><br><span class="line">driver.find_element_by_name(&quot;name&quot;)  # name定位</span><br><span class="line">driver.find_element_by_link_text(&quot;text&quot;)  # 链接名定位</span><br><span class="line">driver.find_element_by_partial_link_text(&quot;text&quot;)  # 通过元素部分可见链接文本定位</span><br><span class="line">driver.find_element_by_tag_name(&quot;name&quot;)  # 通过查找html的标签名称定位元素</span><br><span class="line">driver.find_element_by_xpath(&quot;xpath&quot;)  # 路径定位</span><br><span class="line">driver.find_element_by_class_name(&quot;android.widget.LinearLayout&quot;)  # 类名定位</span><br><span class="line">driver.find_element_by_css_selector(&quot;css&quot;) # css选择器定位</span><br><span class="line"></span><br><span class="line"># 元素集合复数定位</span><br><span class="line">driver.find_elements_by_id(&quot;id&quot;)  # id元素集合</span><br><span class="line">driver.find_elements_by_name(&quot;name&quot;) # name元素集合</span><br><span class="line">driver.find_elements_by_link_text(&quot;text&quot;) # 链接名元素集合</span><br><span class="line">driver.find_elements_by_partial_link_text(&quot;text&quot;) # 部分元素可见链接集合</span><br><span class="line">driver.find_elements_by_tag_name(&quot;name&quot;)  # html标签名集合</span><br><span class="line">driver.find_elements_by_xpath(&quot;xpath&quot;)  # 路径定位集合</span><br><span class="line">driver.find_elements_by_class_name(&quot;android.widget.LinearLayout&quot;)  # 类名定位集合</span><br><span class="line">driver.find_elements_by_css_selector(&quot;css&quot;) # css选择器定位集合</span><br><span class="line"></span><br><span class="line"># 输入框输入</span><br><span class="line">driver.element.send_keys(&quot;中英&quot;)</span><br><span class="line"></span><br><span class="line"># 锁定屏幕</span><br><span class="line">driver.lock(5)</span><br><span class="line"></span><br><span class="line"># 把当前应用置于后台</span><br><span class="line">driver.background_app(5)</span><br><span class="line"></span><br><span class="line"># 收起键盘</span><br><span class="line">driver.hide_keyboard()</span><br><span class="line"></span><br><span class="line"># 打开一个应用或者activity，仅安卓端</span><br><span class="line">driver.start_activity(&#39;com.example.android.apis&#39;, &#39;.Foo&#39;)</span><br><span class="line"></span><br><span class="line"># 打开下拉通知栏 仅Android</span><br><span class="line">driver.open_notifications()</span><br><span class="line"></span><br><span class="line"># 拖动元素，将元素origin_el拖到目标元素destination_el</span><br><span class="line">driver.drag_and_drop(self, origin_el, destination_el):</span><br><span class="line"></span><br><span class="line"># 检查app是否已安装</span><br><span class="line">driver.is_app_installed(&#39;com.example.android.apis&#39;)</span><br><span class="line"></span><br><span class="line"># 安装应用到设备</span><br><span class="line">driver.install_app(&#39;path&#x2F;to&#x2F;my.apk&#39;)</span><br><span class="line"></span><br><span class="line"># 删除应用</span><br><span class="line">driver.remove_app(&#39;com.example.android.apis&#39;)</span><br><span class="line"></span><br><span class="line"># 模拟设备摇晃</span><br><span class="line">driver.shake()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 关闭应用</span><br><span class="line">driver.close_app()</span><br><span class="line"></span><br><span class="line"># 启动 (Launch)</span><br><span class="line"># 根据服务关键字 (desired capabilities) 启动会话 (session) 。请注意这必须在设定 autoLaunch&#x3D;false 关键字时才能生效。</span><br><span class="line"># 这不是用于启动指定的 app&#x2F;activities ————你可以使用 start_activity 做到这个效果————</span><br><span class="line"># 这是用来继续进行使用了 autoLaunch&#x3D;false 关键字时的初始化 (Launch) 流程的。</span><br><span class="line">driver.launch_app()</span><br><span class="line"></span><br><span class="line"># 应用重置，相当于重新卸载安装</span><br><span class="line">driver.reset()</span><br><span class="line"></span><br><span class="line"># 可用上下文 (context) 列出所有的可用上下文</span><br><span class="line"># 翻译备注：context可以理解为 可进入的窗口 。例如，对于原生应用，可用的context和默认context均为NATIVE_APP。</span><br><span class="line"># 详情可查看对混合应用进行自动化测试</span><br><span class="line">driver.contexts</span><br><span class="line"></span><br><span class="line"># 列出当前上下文</span><br><span class="line">driver.current_context</span><br><span class="line"></span><br><span class="line"># 切换到默认的上下文 (context)</span><br><span class="line"># 将上下文切换到默认上下文</span><br><span class="line">driver.switch_to.context(None)</span><br><span class="line"></span><br><span class="line"># 获取应用的字符串</span><br><span class="line">driver.app_strings</span><br><span class="line"></span><br><span class="line"># 按键事件 (Key Event)给设备发送一个按键事件</span><br><span class="line">driver.keyevent(176)</span><br><span class="line"></span><br><span class="line"># 获取当前的activity</span><br><span class="line">driver.current_activity</span><br><span class="line"></span><br><span class="line"># 触摸动作(TouchAction) &#x2F; 多点触摸动作(MultiTouchAction)</span><br><span class="line">action &#x3D; TouchAction(driver)</span><br><span class="line">action.press(element&#x3D;el, x&#x3D;10, y&#x3D;10).release().perform()</span><br><span class="line"></span><br><span class="line"># 滑动(Swipe)模拟用户滑动</span><br><span class="line"># 注意：appium滑动规则是x从左到右变大，y从上到下变大</span><br><span class="line">driver.swipe(start&#x3D;75, starty&#x3D;500, endx&#x3D;75, endy&#x3D;0, duration&#x3D;800)</span><br><span class="line"></span><br><span class="line"># 捏 (Pinch)捏屏幕 (双指往内移动来缩小屏幕)</span><br><span class="line">driver.pinch(element&#x3D;el)</span><br><span class="line"></span><br><span class="line"># 放大 (Zoom)放大屏幕 (双指往外移动来放大屏幕)</span><br><span class="line">driver.zoom(element&#x3D;el)</span><br><span class="line"></span><br><span class="line"># 滑动到某个元素 (Scroll To)</span><br><span class="line">todo: python</span><br><span class="line"></span><br><span class="line"># 从设备中拉出文件 (Pull File)</span><br><span class="line">driver.pull_file(&#39;Library&#x2F;AddressBook&#x2F;AddressBook.sqlitedb&#39;)</span><br><span class="line"></span><br><span class="line"># 推送文件到设备中去</span><br><span class="line">data &#x3D; &quot;some data for the file&quot;</span><br><span class="line">path &#x3D; &quot;&#x2F;data&#x2F;local&#x2F;tmp&#x2F;file.txt&quot;</span><br><span class="line">driver.push_file(path, data.encode(&#39;base64&#39;))</span><br><span class="line"></span><br><span class="line"># 断言</span><br><span class="line">Assert.assertEquals(&quot;I am a div&quot;, div.getText()); &#x2F;&#x2F;跳转到指定页面并在该页面所以用元素id进行交互</span><br><span class="line"></span><br><span class="line"># 检查文本是否符合预期</span><br><span class="line">assertEqual(&#39;I am a div&#39;, div.text)</span><br><span class="line"></span><br><span class="line"># 输入法是否有活动 返回真假</span><br><span class="line">is_ime_active(self):</span><br><span class="line"></span><br><span class="line"># 返回当前安卓设备可用的输入法</span><br><span class="line">driver.available_ime_engines(self):</span><br><span class="line"></span><br><span class="line"># 激活安卓设备中的制定输入法</span><br><span class="line">driver.activate_ime_engine(self, engine):</span><br><span class="line"></span><br><span class="line"># 关闭当前的输入法（android）</span><br><span class="line">driver.deactivate_ime_engine(self):</span><br><span class="line"></span><br><span class="line"># 打开安卓设备上的位置定位设置</span><br><span class="line">driver.toggle_location_services()</span><br><span class="line"></span><br><span class="line"># 设置设备的经纬度</span><br><span class="line">    :Args:</span><br><span class="line">     - latitude纬度 - String or numeric value between -90.0 and 90.00</span><br><span class="line">     - longitude经度 - String or numeric value between -180.0 and 180.0</span><br><span class="line">     - altitude海拔高度- String or numeric value</span><br><span class="line">用法 driver.set_location(纬度，经度，高度)</span><br><span class="line"></span><br><span class="line"># 点击</span><br><span class="line">element.click()</span><br><span class="line"></span><br><span class="line"># 清除元素内容</span><br><span class="line">element.clear()</span><br><span class="line"></span><br><span class="line"># 返回元素的文本内容</span><br><span class="line">element.text()</span><br><span class="line"></span><br><span class="line"># 提交表单</span><br><span class="line">element.submit(self):</span><br><span class="line"></span><br><span class="line"># 元素是否可用</span><br><span class="line">element.is_enabled()</span><br><span class="line"></span><br><span class="line"># 元素是否可选</span><br><span class="line">element.is_slected()</span><br><span class="line"></span><br><span class="line"># 元素是否可见</span><br><span class="line">element.is_displayed()</span><br><span class="line"></span><br><span class="line"># 获取元素的大小（高和宽）</span><br><span class="line">new_size[&quot;height&quot;] &#x3D; size[&quot;height&quot;]</span><br><span class="line">new_size[&quot;width&quot;] &#x3D; size[&quot;width&quot;]</span><br><span class="line">driver.element.size</span><br><span class="line"></span><br><span class="line"># 获取元素左上角的坐标</span><br><span class="line"># 用法 driver.element.location</span><br><span class="line">&#39;&#39;&#39;返回element的x坐标, int类型&#39;&#39;&#39;</span><br><span class="line">driver.element.location.get(&#39;x&#39;)</span><br><span class="line">&#39;&#39;&#39;返回element的y坐标, int类型&#39;&#39;&#39;</span><br><span class="line">driver.element.location.get(&#39;y&#39;)</span><br><span class="line"></span><br><span class="line"># 获取当前元素的截图为Base64编码的字符串</span><br><span class="line">img_b64 &#x3D; element.screenshot_as_base64</span><br><span class="line"></span><br><span class="line"># 执行JS</span><br><span class="line"># 在当前窗口&#x2F;框架（特指 Html 的 iframe ）同步执行 javascript 代码</span><br><span class="line">driver.execute_script(&#39;document.title&#39;)</span><br><span class="line"># 异步执行代码，其他代码在执行</span><br><span class="line">driver.execute_async_script(&#39;document.title&#39;)</span><br><span class="line"></span><br><span class="line"># 获取当前url</span><br><span class="line">driver.current_url</span><br><span class="line"></span><br><span class="line"># 获取页面源</span><br><span class="line">driver.page_source</span><br><span class="line"></span><br><span class="line"># 关闭当前窗口</span><br><span class="line">driver.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 关闭应用</span><br><span class="line">driver.quit()</span><br><span class="line"></span><br><span class="line"># chrome上进行测试</span><br><span class="line">&#123;</span><br><span class="line">&#39;platformName&#39;: &#39;Android&#39;,</span><br><span class="line">&#39;platformVersion&#39;: &#39;4.4&#39;,</span><br><span class="line">&#39;deviceName&#39;: &#39;Android Emulator&#39;,</span><br><span class="line">&#39;browserName&#39;: &#39;Chrome&#39;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 真机测试</span><br><span class="line">&#123;</span><br><span class="line">&#39;automationName&#39;: &#39;Selendroid&#39;,</span><br><span class="line">&#39;platformName&#39;: &#39;Android&#39;,</span><br><span class="line">&#39;platformVersion&#39;: &#39;2.3&#39;,</span><br><span class="line">&#39;deviceName&#39;: &#39;Android Emulator&#39;,</span><br><span class="line">&#39;app&#39;: myApp,</span><br><span class="line">&#39;appPackage&#39;: &#39;com.mycompany.package&#39;,</span><br><span class="line">&#39;appActivity&#39;: &#39;.MainActivity&#39;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 多点触控</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">规范中的可用事件有：</span><br><span class="line">* 短按 (press)</span><br><span class="line">* 释放 (release)</span><br><span class="line">* 移动到 (moveTo)</span><br><span class="line">* 点击 (tap)</span><br><span class="line">* 等待 (wait)</span><br><span class="line">* 长按 (longPress)</span><br><span class="line">* 取消 (cancel)</span><br><span class="line">* 执行 (perform)</span><br><span class="line">&quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
+
+<p><br><br><span class="btn large center"><a href="<https://github.com/wongqingbin/blog/issues>" title="向博主反馈问题"><i class="fas fa-paper-plane"></i>向博主反馈问题</a></span></p>
+
+          
+            <div class="article_footer">
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class="content">
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href="https://wongqingbin.github.io/ckpo6h1vl0022fmni48fu3zkz/">https://wongqingbin.github.io/ckpo6h1vl0022fmni48fu3zkz/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class="meta" id="footer-meta">
+    <div class="new-meta-box">
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-08T23:07:54+08:00">
+  <a class="notlink">
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年6月8日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item category">
+    <a href="/categories/appium/" rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>appium</p>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/appium/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>appium</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        
+        <div class="hoverbox">
+          <a><img src="https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/blog/wechat.png"></a>
+          <div class="target">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAE4CAAAAADqFLC2AAADoElEQVR42u3ZQY4bMQwEQP//05t7gIXJJp1hjNJtEXlElXJokK8fK1ovBODAgQNngQN3BO4Vrr9/n/79a4FhHe++P74vOHDgwIEDBw7cMbhyAGxCVPd391Wh3p3Tvi84cODAgQMHDtxRuDTwbgXUabBOH7J8X3DgwIEDBw4cuC+BSy9Wvfi0gbpVFzhw4MCBAwcO3LfBVQNwtxE5HWRvPyg4cODAgQMHDtx1uHSguw3w7vxpMH58kg8OHDhw4MCBA7cE113TwPn03/F9wYEDBw4cOHDgjsBtrU8VvPXdtXuCAwcOHDhw4MAdgesOjtOB8vTft2DTc8CBAwcOHDhw4K7BVQ/oHlj9/vrAuHhOvB8cOHDgwIEDB+4YXLXAbmDuBtjpeWkd5YcBBw4cOHDgwIE7Atc9aFrAdKA8DerjRik4cODAgQMHDtwRuLRR+KngO60n3V8GBgcOHDhw4MCB+0/gpg3OaTCdPmAazH/dDw4cOHDgwIEDdwRua+CbQmw3SLv1tBup4MCBAwcOHDhwR+Cmg96tAfMUJK2ze39w4MCBAwcOHLhrcNOBdAqxNdiePnj5fuDAgQMHDhw4cEfg0mDY3dcNrumFuw3Qdw9eHkiDAwcOHDhw4MA9BJcWlgbZacNya5BdDe7gwIEDBw4cOHDX4LoFVQNjFzgFmEK2G5vgwIEDBw4cOHBH4bqD5a1G4TTApgG7/UDgwIEDBw4cOHDH4LaC6nSlD7cdnMGBAwcOHDhw4K7DpYPjLmA3QE8HyOlgPJ7kgwMHDhw4cODA/WO4tNBuwEwbj+l3tx8cHDhw4MCBAwfuKlw6MN76Xfdi3d+tgYMDBw4cOHDgwB2BSwfDW0DbA+fHBtLgwIEDBw4cOHDH4NJgGTcKmyBbwbl8T3DgwIEDBw4cuGNwaeDtPkAX6qe50jriAAwOHDhw4MCBA3cEbtroSy84bWh+ej84cODAgQMHDtw1uC2ALvT0wt1Avj6QBgcOHDhw4MCBexhuOkjuNg6nA+uthmv3YcGBAwcOHDhw4K7CTQNvt4BPAXzqAcCBAwcOHDhw4K7DVQNvdXC8DdIddG8HbXDgwIEDBw4cuG+HSxudXYh0wF1uXIIDBw4cOHDgwH0pXPqddG03LLuNVnDgwIEDBw4cuKtw3cbjtEG51bDsnh//xwEHDhw4cODAgTsGlw5w0/1pMO0Ovqtg8UAaHDhw4MCBAwfuITir2UhFAA4cOHAWOHDPrj8SrP8mFCh0QAAAAABJRU5ErkJggg==">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class="prev" href="/ckpo6h1w5003kfmni4e9scpqt/">
+                <p class="title"><i class="fas fa-chevron-left" aria-hidden="true"></i>mac安装mysql8.0</p>
+                <p class="content">Mac安装mysql8.0版本
+
+安装12345# Mac安装MySQLbrew install mysqlmysql.server startmysql_secure_installation...</p>
+              </a>
+            
+            
+              <a class="next" href="/ckpo6h1vw002xfmni2dkjgf3p/">
+                <p class="title">编写命令行工具<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class="content">python使用argparse编写命令行工具
+
+1234567891011121314151617181920def main():    # 初始化命令行 自带 --help 参数 缩写为-...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '元素定位',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class="l_side">
+  
+  
+    
+    
+
+<section class="widget blogger shadow desktop mobile">
+  <div class="content">
+    
+      
+        <a class="avatar flat-box" href="/about/">
+          <img no-lazy src="https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/myhead.png">
+        </a>
+      
+    
+    
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/714227638@qq.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/wongqingbin" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class="copyright">
+        <p><a href="https://github.com/wongqingbin" target="_blank" rel="external nofollow noopener noreferrer">Copyright © 2020  Wang QingBin</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href="javascript:void(0)"></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/blog/background.jpeg"];
+        if ('false' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("div.fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

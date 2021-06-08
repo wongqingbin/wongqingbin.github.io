@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme="https://volantis.js.org/#2.6.5">
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>antdvp.vue-cli - Frieza</title>
+  
+    <meta name="keywords" content="vue">
+  
+  
+    <meta name="description" content="ant-design-vue-pro 使用脚手架 vue-cli 创建项目">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+    
+      <meta name="theme-color" content="#FFFFFF">
+    
+      <meta name="msapplication-TileColor" content="#1BC3FB">
+    
+      <meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/browserconfig.xml">
+    
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicon.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/favicon-32x32.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/apple-touch-icon.png">
+  <link rel="mask-icon" color="#1BC3FB" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/safari-pinned-tab.svg">
+  <link rel="manifest" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/site.webmanifest">
+  
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class="container">
+  <div class="wrapper">
+    <div class="nav-sub">
+      <p class="title"></p>
+      <ul class="switcher nav-list-h">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href="javascript:void(0)"></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href="javascript:void(0)"></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href="/">
+          
+          
+            <i class="https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/myhead.png"></i>
+          
+          
+            Frieza
+          
+          
+        </a>
+      
+
+			<div class="menu navigation">
+				<ul class="nav-list-h">
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/" id="home">
+                  <i class="fas fa-home fa-fw fa-fw"></i>主页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-book fa-fw fa-fw"></i>系列文章
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/snippet/" id="wqbsnippet">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Python
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li class="header">
+                <i class="fas fa-file-alt fa-fw fa-fw"></i>Java
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/docker/" id="wqbdocker">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Docker
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/sql/" id="wqbsql">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>SQL
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/linux/" id="wqblinux">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Linux
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/appium/" id="wqbappium">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Appium
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/vue/" id="wqbvue">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Vue
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/adb/" id="adb">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Android SDK
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/categories/" id="categories">
+                  <i class="fas fa-folder-open fa-fw"></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/tags/" id="tags">
+                  <i class="fas fa-tags fa-fw"></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/archives/" id="archives">
+                  <i class="fas fa-archive fa-fw"></i>时间轴
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-ellipsis-v fa-fw"></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/about/" id="about">
+                  <i class="fas fa-info-circle fa-fw"></i>关于小站
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/wongqingbin/PicGo" target="_blank" id="https:githubcomwongqingbinPicGo" rel="external nofollow noopener noreferrer">
+                  <i class="fab fa-github fa-fw"></i>GitHub图床
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/wongqingbin/blog" target="_blank" id="https:githubcomwongqingbinblog" rel="external nofollow noopener noreferrer">
+                  <i class="fab fa-github fa-fw"></i>博客源码
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/msgboard/" id="msgboard">
+                  <i class="fas fa-question-circle fa-fw fa-fw"></i>留言板
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li class="header">
+                <i class="fas fa-link fa-fw"></i>友情链接
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search...">
+        </form>
+      </div>
+
+			<ul class="switcher nav-list-h">
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href="javascript:void(0)"></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href="javascript:void(0)"></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/" id="home">
+                  <i class="fas fa-home fa-fw fa-fw"></i>主页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-book fa-fw fa-fw"></i>系列文章
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/snippet/" id="wqbsnippet">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Python
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li class="header">
+                <i class="fas fa-file-alt fa-fw fa-fw"></i>Java
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/docker/" id="wqbdocker">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Docker
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/sql/" id="wqbsql">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>SQL
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/linux/" id="wqblinux">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Linux
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/appium/" id="wqbappium">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Appium
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/vue/" id="wqbvue">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Vue
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/adb/" id="adb">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Android SDK
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/categories/" id="categories">
+                  <i class="fas fa-folder-open fa-fw"></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/tags/" id="tags">
+                  <i class="fas fa-tags fa-fw"></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/archives/" id="archives">
+                  <i class="fas fa-archive fa-fw"></i>时间轴
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-ellipsis-v fa-fw"></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/about/" id="about">
+                  <i class="fas fa-info-circle fa-fw"></i>关于小站
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/wongqingbin/PicGo" target="_blank" id="https:githubcomwongqingbinPicGo" rel="external nofollow noopener noreferrer">
+                  <i class="fab fa-github fa-fw"></i>GitHub图床
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/wongqingbin/blog" target="_blank" id="https:githubcomwongqingbinblog" rel="external nofollow noopener noreferrer">
+                  <i class="fab fa-github fa-fw"></i>博客源码
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/msgboard/" id="msgboard">
+                  <i class="fas fa-question-circle fa-fw fa-fw"></i>留言板
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li class="header">
+                <i class="fas fa-link fa-fw"></i>友情链接
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class="body-wrapper">
+      
+
+<div class="l_main">
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class="meta">
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/ckpo6h1w6003ofmnianpagq0m/">
+      antdvp.vue-cli
+    </a>
+  </h1>
+
+
+        
+        <div class="new-meta-box">
+          
+            
+          
+            
+              
+<div class="new-meta-item author">
+  <a href="https://github.com/wongqingbin" target="_blank" rel="external nofollow noopener noreferrer">
+    <img src="https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/myhead.png">
+    <p>Wang QingBin</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class="new-meta-item category">
+    <a href="/categories/vue/" rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>vue</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class="notlink">
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年5月7日</p>
+  </a>
+</div>
+
+            
+          
+            
+              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-08T15:07:54+00:00">
+  <a class="notlink">
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年6月8日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class="notlink">
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：371字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class="notlink">
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>ant-design-vue-pro 使用脚手架 vue-cli 创建项目</p>
+<a id="more"></a>
+
+<h2 id="vue-create"><a href="#vue-create" class="headerlink" title="vue create "></a>vue create <my-project-name></my-project-name></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#npm install -g @vue/cli  vue --version  @vue/cli 4.3.1</span></span><br><span class="line">vue create &lt;my-project-name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Vue CLI v4.3.1</span></span><br><span class="line"><span class="comment"># ? Please pick a preset: Manually select features</span></span><br><span class="line"><span class="comment"># ? Check the features needed for your project: Babel, Router, Vuex, CSS Pre-processors, Linter</span></span><br><span class="line"><span class="comment"># ? Use history mode for router? (Requires proper server setup for index fallback in production) Yes</span></span><br><span class="line"><span class="comment"># ? Pick a CSS pre-processor (PostCSS, Autoprefixer and CSS Modules are supported by default): Less</span></span><br><span class="line"><span class="comment"># ? Pick a linter / formatter config: Prettier</span></span><br><span class="line"><span class="comment"># ? Pick additional lint features: Lint on save</span></span><br><span class="line"><span class="comment"># ? Where do you prefer placing config for Babel, ESLint, etc.? In dedicated config files</span></span><br><span class="line"><span class="comment"># ? Save this as a preset for future projects? Yes</span></span><br><span class="line"><span class="comment"># ? Save preset as: a-d-v-p</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Less、history"><a href="#Less、history" class="headerlink" title="Less、history"></a>Less、history</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Less: css加载器使用less，方便之后做主题颜色修改配置</span></span><br><span class="line"><span class="comment"># history: 最终路由中不带#号，漂亮的url路由</span></span><br><span class="line"><span class="comment"># In dedicated config files: 配置文件不堆积在package.json中；使用单独的配置文件vue.confi.js需手动新建</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="npm-run-serve"><a href="#npm-run-serve" class="headerlink" title="npm run serve"></a>npm run serve</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 验证第一步是否创建成功</span></span><br><span class="line"><span class="built_in">cd</span> &lt;my-project-name&gt;</span><br><span class="line">npm run serve</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二步 安装插件ant-design-vue 和 moment</span></span><br><span class="line">npm i ant-design-vue moment</span><br></pre></td></tr></table></figure>
+
+<h2 id="vue-config-js"><a href="#vue-config-js" class="headerlink" title="vue.config.js"></a>vue.config.js</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># webpack配置之less-load引入</span></span><br><span class="line">mkdir vue.config.js</span><br><span class="line"><span class="comment"># 修改vue.config.js文件，添加css内容</span></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  // less-load</span><br><span class="line">  css: &#123;</span><br><span class="line">    loaderOptions: &#123;</span><br><span class="line">      less: &#123;</span><br><span class="line">        // 这里的选项会传递给 less-loader</span><br><span class="line">        javascriptEnabled: <span class="literal">true</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 组件和样式按需加载，优化减小前端加载流量</span></span><br><span class="line"><span class="comment"># babel.config.js 文件配置</span></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  presets: [<span class="string">"@vue/cli-plugin-babel/preset"</span>],</span><br><span class="line">  plugins: [</span><br><span class="line">    [</span><br><span class="line">      <span class="string">"import"</span>,</span><br><span class="line">      &#123; libraryName: <span class="string">"ant-design-vue"</span>, libraryDirectory: <span class="string">"es"</span>, style: <span class="literal">true</span> &#125;</span><br><span class="line">    ] // `style: <span class="literal">true</span>` 会加载 less 文件</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment"># 安装插件 babel-plugin-import</span></span><br><span class="line">npm i --save-dev babel-plugin-import</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/wongqingbin/Frieza/raw/master/image/advp.png" alt="advp.png"></p>
+<p><br><br><span class="btn large center"><a href="<https://github.com/wongqingbin/blog/issues>" title="向博主反馈问题"><i class="fas fa-paper-plane"></i>向博主反馈问题</a></span></p>
+
+          
+            <div class="article_footer">
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class="content">
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href="https://wongqingbin.github.io/ckpo6h1w6003ofmnianpagq0m/">https://wongqingbin.github.io/ckpo6h1w6003ofmnianpagq0m/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class="meta" id="footer-meta">
+    <div class="new-meta-box">
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-08T23:07:54+08:00">
+  <a class="notlink">
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年6月8日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item category">
+    <a href="/categories/vue/" rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>vue</p>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/vue/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>vue</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        
+        <div class="hoverbox">
+          <a><img src="https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/blog/wechat.png"></a>
+          <div class="target">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAE4CAAAAADqFLC2AAADqklEQVR42u3aQXIiQQwEQP7/6d0HOAikkjAykX3DMDOtbA5licc/K1oPBODAgQNngQN3BO4Rrh83fPH39Prq+9XrpvWCAwcOHDhw4MBdg0s3kkI9+3z1ftsHXIYHBw4cOHDgwIE7CvcyADYDZTWQVguY3n9cLzhw4MCBAwcO3JfBTQPyNDB3rwcHDhw4cODAgQOXBdLqc6r76EKBAwcOHDhw4MB9G1y6kW7w3Hp/epAfm+SDAwcOHDhw4MAtwXXXdAD86ddxveDAgQMHDhw4cEfgpittRE4/txWs2/WCAwcOHDhw4MAdgUsDYhVyq7B0sF3dX/l6cODAgQMHDhy4I3DVgrcGvNMB81YA7gZtcODAgQMHDhy463DdxuUUIAVJG6lpUAYHDhw4cODAgbsKtx2I042nhVYPbhrUwYEDBw4cOHDgrsClAbLbAEwPZgv4MVzgwIEDBw4cOHDX4LYGx9UG5rsapVv7f3k/cODAgQMHDhy4Y3CvGn/ThmK3ETp9PQ666SQfHDhw4MCBAwful+BeQaTvTwPsdID8ti8COHDgwIEDBw7cUbhqQekP/7YGx2njMw3Q4MCBAwcOHDhw1+DSAqeD4RS+G2jTRurT98GBAwcOHDhw4I7ArQXDZpDugqQH1f0CtP9zAAcOHDhw4MCB+zDc1uA3DajVYLoVjOODBAcOHDhw4MCBOwK3BbUFmt5/OpAuPx8cOHDgwIEDB+4YXDrQTX8oOAV9d3AGBw4cOHDgwIG7Dvcoru7n0/umwXsaeMtfGHDgwIEDBw4cuGNw00FtFyANvGnwrYK9vC84cODAgQMHDtwRuG5Db1pAGmynjc7pAYEDBw4cOHDgwF2Dqw5600Da3thwP1347kGCAwcOHDhw4MD9Fbh3DXi3G5bdAXhcLzhw4MCBAwcO3FG4bmBMB9Xdhmna+NxqpIIDBw4cOHDgwF2HmwbJ6UoPYHtfT58HDhw4cODAgQN3BG66pgPnaYBNA3n8A0dw4MCBAwcOHLgjcNOAuN3InDZQu9dX/wEABw4cOHDgwIG7CjcNvFtB9l1Buru/p88FBw4cOHDgwIE7Ctce0DYDZRfstwbi5XrAgQMHDhw4cOC+DG5a2NYgvPrcePANDhw4cODAgQP3pXDbDcetg0sPBhw4cODAgQMH7q/AbRdYHQjHhTQH2ulAHRw4cODAgQMH7irc1gA3LbwbYNPGaPX55QAMDhw4cODAgQP3ITir2eBEAA4cOHAWOHCfXf8BWih68TAYVLAAAAAASUVORK5CYII=">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class="prev" href="/ckpo6h1w3003efmnifipb89kp/">
+                <p class="title"><i class="fas fa-chevron-left" aria-hidden="true"></i>Bubble Sort</p>
+                <p class="content">经典面试题---进阶版冒泡排序
+
+
+常规版1234567891011121314151617#!/usr/bin/env python3# -*- coding: utf-8 -*-def fo...</p>
+              </a>
+            
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'antdvp.vue-cli',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class="l_side">
+  
+  
+    
+    
+
+<section class="widget blogger shadow desktop mobile">
+  <div class="content">
+    
+      
+        <a class="avatar flat-box" href="/about/">
+          <img no-lazy src="https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/myhead.png">
+        </a>
+      
+    
+    
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name">本文目录</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-create"><span class="toc-number">1.</span> <span class="toc-text">vue create </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Less、history"><span class="toc-number">2.</span> <span class="toc-text">Less、history</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npm-run-serve"><span class="toc-number">3.</span> <span class="toc-text">npm run serve</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-config-js"><span class="toc-number">4.</span> <span class="toc-text">vue.config.js</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/714227638@qq.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/wongqingbin" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class="copyright">
+        <p><a href="https://github.com/wongqingbin" target="_blank" rel="external nofollow noopener noreferrer">Copyright © 2020  Wang QingBin</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href="javascript:void(0)"></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/blog/background.jpeg"];
+        if ('false' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("div.fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

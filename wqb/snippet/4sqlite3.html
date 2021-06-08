@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme="https://volantis.js.org/#2.6.5">
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>4.sqlite3封装 - Frieza</title>
+  
+  
+    <meta name="description" content="python3使用Sqlite3本地数据库存储数据">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+    
+      <meta name="theme-color" content="#FFFFFF">
+    
+      <meta name="msapplication-TileColor" content="#1BC3FB">
+    
+      <meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/browserconfig.xml">
+    
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicon.ico">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/favicon-32x32.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/apple-touch-icon.png">
+  <link rel="mask-icon" color="#1BC3FB" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/safari-pinned-tab.svg">
+  <link rel="manifest" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/site.webmanifest">
+  
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class="container">
+  <div class="wrapper">
+    <div class="nav-sub">
+      <p class="title"></p>
+      <ul class="switcher nav-list-h">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href="javascript:void(0)"></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href="javascript:void(0)"></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href="/">
+          
+          
+            <i class="https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/myhead.png"></i>
+          
+          
+            Frieza
+          
+          
+        </a>
+      
+
+			<div class="menu navigation">
+				<ul class="nav-list-h">
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/" id="home">
+                  <i class="fas fa-home fa-fw fa-fw"></i>主页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-book fa-fw fa-fw"></i>系列文章
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/snippet/" id="wqbsnippet">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Python
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li class="header">
+                <i class="fas fa-file-alt fa-fw fa-fw"></i>Java
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/docker/" id="wqbdocker">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Docker
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/sql/" id="wqbsql">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>SQL
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/linux/" id="wqblinux">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Linux
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/appium/" id="wqbappium">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Appium
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/vue/" id="wqbvue">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Vue
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/adb/" id="adb">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Android SDK
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/categories/" id="categories">
+                  <i class="fas fa-folder-open fa-fw"></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/tags/" id="tags">
+                  <i class="fas fa-tags fa-fw"></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href="/archives/" id="archives">
+                  <i class="fas fa-archive fa-fw"></i>时间轴
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-ellipsis-v fa-fw"></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/about/" id="about">
+                  <i class="fas fa-info-circle fa-fw"></i>关于小站
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/wongqingbin/PicGo" target="_blank" id="https:githubcomwongqingbinPicGo" rel="external nofollow noopener noreferrer">
+                  <i class="fab fa-github fa-fw"></i>GitHub图床
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/wongqingbin/blog" target="_blank" id="https:githubcomwongqingbinblog" rel="external nofollow noopener noreferrer">
+                  <i class="fab fa-github fa-fw"></i>博客源码
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/msgboard/" id="msgboard">
+                  <i class="fas fa-question-circle fa-fw fa-fw"></i>留言板
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li class="header">
+                <i class="fas fa-link fa-fw"></i>友情链接
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search...">
+        </form>
+      </div>
+
+			<ul class="switcher nav-list-h">
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href="javascript:void(0)"></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href="javascript:void(0)"></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/" id="home">
+                  <i class="fas fa-home fa-fw fa-fw"></i>主页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-book fa-fw fa-fw"></i>系列文章
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/snippet/" id="wqbsnippet">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Python
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li class="header">
+                <i class="fas fa-file-alt fa-fw fa-fw"></i>Java
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/docker/" id="wqbdocker">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Docker
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/sql/" id="wqbsql">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>SQL
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/linux/" id="wqblinux">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Linux
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/appium/" id="wqbappium">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Appium
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/wqb/vue/" id="wqbvue">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Vue
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/adb/" id="adb">
+                  <i class="fas fa-file-alt fa-fw fa-fw"></i>Android SDK
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/categories/" id="categories">
+                  <i class="fas fa-folder-open fa-fw"></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/tags/" id="tags">
+                  <i class="fas fa-tags fa-fw"></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href="/archives/" id="archives">
+                  <i class="fas fa-archive fa-fw"></i>时间轴
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box">
+                  <i class="fas fa-ellipsis-v fa-fw"></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/about/" id="about">
+                  <i class="fas fa-info-circle fa-fw"></i>关于小站
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/wongqingbin/PicGo" target="_blank" id="https:githubcomwongqingbinPicGo" rel="external nofollow noopener noreferrer">
+                  <i class="fab fa-github fa-fw"></i>GitHub图床
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="https://github.com/wongqingbin/blog" target="_blank" id="https:githubcomwongqingbinblog" rel="external nofollow noopener noreferrer">
+                  <i class="fab fa-github fa-fw"></i>博客源码
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href="/msgboard/" id="msgboard">
+                  <i class="fas fa-question-circle fa-fw fa-fw"></i>留言板
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li class="header">
+                <i class="fas fa-link fa-fw"></i>友情链接
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class="body-wrapper">
+      
+
+<div class="l_main">
+  
+
+  
+    <article id="page" class="post white-box reveal shadow article-type-page" itemscope itemprop="blogPost">
+      
+
+
+  <section class="meta">
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/wqb/snippet/4sqlite3.html">
+      4.sqlite3封装
+    </a>
+  </h1>
+
+
+        
+        <div class="new-meta-box">
+          
+            
+          
+            
+              
+<div class="new-meta-item author">
+  <a href="https://github.com/wongqingbin" target="_blank" rel="external nofollow noopener noreferrer">
+    <img src="https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/myhead.png">
+    <p>Wang QingBin</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class="notlink">
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年8月9日</p>
+  </a>
+</div>
+
+            
+          
+            
+              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-08T15:07:54+00:00">
+  <a class="notlink">
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年6月8日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class="notlink">
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：227字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class="notlink">
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>python3使用Sqlite3本地数据库存储数据</p>
+<a id="more"></a>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dict_factory</span><span class="params">(cursor, row)</span>:</span></span><br><span class="line">    d = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> idx, col <span class="keyword">in</span> enumerate(cursor.description):</span><br><span class="line">        d[col[<span class="number">0</span>]] = row[idx]</span><br><span class="line">    <span class="keyword">return</span> d</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super(Demo, self).__init__()</span><br><span class="line">        self.conn = sqlite3.connect(<span class="string">'test.db'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">create</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">with</span> self.conn:</span><br><span class="line">            self.conn.execute(<span class="string">'''CREATE TABLE COMPANY</span></span><br><span class="line"><span class="string">               (ID INT PRIMARY KEY     NOT NULL,</span></span><br><span class="line"><span class="string">               NAME           TEXT    NOT NULL,</span></span><br><span class="line"><span class="string">               AGE            INT     NOT NULL,</span></span><br><span class="line"><span class="string">               ADDRESS        CHAR(50),</span></span><br><span class="line"><span class="string">               SALARY         REAL);'''</span></span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insert</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">with</span> self.conn:</span><br><span class="line">            self.conn.execute(<span class="string">"INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) \</span></span><br><span class="line"><span class="string">               VALUES (5, 'Paul', 32, 'California', 20000.00 )"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">select</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.conn.row_factory = dict_factory  <span class="comment"># 查询数据结果返回为字典：[&#123;&#125;,&#123;&#125;]</span></span><br><span class="line">        c = self.conn.cursor()</span><br><span class="line">        c.execute(<span class="string">"SELECT id, name, address, salary  from COMPANY"</span>)</span><br><span class="line">        print(c.fetchall())  <span class="comment"># [&#123;key: value, key: value&#125;, &#123;...&#125;, &#123;...&#125;]</span></span><br><span class="line">        print(c.fetchone())  <span class="comment"># [&#123;key: value, key: value&#125;]</span></span><br><span class="line">        <span class="keyword">return</span> c.fetchall()  <span class="comment"># List[Dict]</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">update</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">with</span> self.conn:</span><br><span class="line">            self.conn.execute(<span class="string">"UPDATE COMPANY set SALARY = 25000.00 where ID=1"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">delete</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">with</span> self.conn:</span><br><span class="line">            self.conn.execute(<span class="string">"DELETE from COMPANY where ID=2;"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__del__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.conn.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    obj = Demo()</span><br><span class="line">    <span class="comment"># obj.create()</span></span><br><span class="line">    <span class="comment"># obj.insert()</span></span><br><span class="line">    obj.select()</span><br><span class="line">    <span class="comment"># obj.update()</span></span><br><span class="line">    <span class="comment"># obj.delete()</span></span><br></pre></td></tr></table></figure>
+
+<p><br><br><span class="btn large center"><a href="<https://github.com/wongqingbin/blog/issues>" title="向博主反馈问题"><i class="fas fa-paper-plane"></i>向博主反馈问题</a></span></p>
+
+          
+        </div>
+        
+          
+
+
+  <section class="meta" id="footer-meta">
+    <div class="new-meta-box">
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-08T23:07:54+08:00">
+  <a class="notlink">
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年6月8日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        
+        <div class="hoverbox">
+          <a><img src="https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/blog/wechat.png"></a>
+          <div class="target">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAAAAACi5bZQAAAC/0lEQVR42u3aQbIbIQwFQN//0skBEhfoSU5G383O1HiAZvNKmtcv46/jhQAMGDBgwIBZA/MKxx8vLM6/3djluqf10vOAAQMGDBgwYPbBVDd+mj+99wRdfW7qPGDAgAEDBgyYvTDVYJWCVNfv7uf6/2DAgAEDBgyYr4OpBrFPB0cwYMCAAQMGDJhuoOs2wroNPjBgwIABAwbM98CUG1TFhlk1oKUX8N87kWDAgAEDBgyYfwaTBq6n/o7PAwYMGDBgwIBZA9MdUx8KdQtdY+cBAwYMGDBgwKyBSQNSt6GWFsDSwth1oQwMGDBgwIABsw4mDU4p1LvnTvPVdW/nwYABAwYMGDB7YboLfipw3UKlhbJy8gUDBgwYMGDAPAZmrMAzVIg67WeqUXcMeGDAgAEDBgyYx8OkAS+FSgtI3flrSDBgwIABAwbMGpj04Cns1AV0599eCBgwYMCAAQNmHUy64dOCU8Hr9oDVYHkMeGDAgAEDBgyYx8JMFY7GNjbU8Ls9FxgwYMCAAQNmL0w1WKUH7/5OL7L8QRMYMGDAgAEDZh1MWjiqBrS00JQWrKrBFQwYMGDAgAGzD6YamKYKW2mjbXq/YMCAAQMGDJj9MNVAdb1gWHjqNvSqARIMGDBgwIABswdmqjGWHqgaAD8dKMGAAQMGDBgw+2CmDjDVaJsKfuWgCgYMGDBgwIBZB9MtSFULUd2C2G0hrPweMGDAgAEDBsx6mNvCTrdQVIWfCoBv3wMGDBgwYMCAWQvTLTilQey6ITbU4CsHPDBgwIABAwbM42C6Iw1i3fd0C1THgAcGDBgwYMCAeTzMdGBKA2AaNKcahmDAgAEDBgyYvTDdQDfVsOs25tqwYMCAAQMGDJi1MN0AlX7oUw2MaUCNO5FgwIABAwYMmB8LU4WYAqle0HEeDBgwYMCAAfN1MNMNvOqHRt1CGRgwYMCAAQNmP0y14TYFnDbiugUzMGDAgAEDBsx+mPHG1Yeh0gBYbriBAQMGDBgwYB4LY4ABAwYMGDBglo3fYIFkncfXBVAAAAAASUVORK5CYII=">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+      </section>
+    </article>
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+
+</div>
+<aside class="l_side">
+  
+  
+    
+    
+
+
+  
+
+<section class="widget list group shadow desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-list-alt fa-fw" aria-hidden="true"></i><span class="name">Code Snippet</span>
+    
+  </header>
+
+
+  <div class="content">
+    <ul class="list entry navigation">
+      
+        <li><a class="flat-box" title="/wqb/snippet/index.html" href="/wqb/snippet/index.html" id="wqbsnippetindexhtml">
+          <div class="name">
+            
+            简介
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/wqb/snippet/1pip.html" href="/wqb/snippet/1pip.html" id="wqbsnippet1piphtml">
+          <div class="name">
+            
+            1.pip更换国内源
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/wqb/snippet/2argparse.html" href="/wqb/snippet/2argparse.html" id="wqbsnippet2argparsehtml">
+          <div class="name">
+            
+            2.命令行工具argparse
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/wqb/snippet/3threading.html" href="/wqb/snippet/3threading.html" id="wqbsnippet3threadinghtml">
+          <div class="name">
+            
+            3.多线程编程threading
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/wqb/snippet/4sqlite3.html" href="/wqb/snippet/4sqlite3.html" id="wqbsnippet4sqlite3html">
+          <div class="name">
+            
+            4.sqlite3封装
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/wqb/snippet/5SQLAlchemy.html" href="/wqb/snippet/5SQLAlchemy.html" id="wqbsnippet5SQLAlchemyhtml">
+          <div class="name">
+            
+            5.SQLAlchemy
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/wqb/snippet/6strategy.html" href="/wqb/snippet/6strategy.html" id="wqbsnippet6strategyhtml">
+          <div class="name">
+            
+            6.策略模式
+          </div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget blogger shadow desktop mobile">
+  <div class="content">
+    
+      
+        <a class="avatar flat-box" href="/about/">
+          <img no-lazy src="https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/myhead.png">
+        </a>
+      
+    
+    
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/714227638@qq.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/wongqingbin" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class="copyright">
+        <p><a href="https://github.com/wongqingbin" target="_blank" rel="external nofollow noopener noreferrer">Copyright © 2020  Wang QingBin</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href="javascript:void(0)"></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/blog/background.jpeg"];
+        if ('false' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("div.fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
